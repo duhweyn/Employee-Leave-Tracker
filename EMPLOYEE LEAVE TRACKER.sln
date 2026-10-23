@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+# Visual Studio Version 18
+VisualStudioVersion = 18.10.12224.181 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMPLOYEE LEAVE TRACKER", "EMPLOYEE LEAVE TRACKER.csproj", "{C4288669-FB9E-4111-BB96-ABD3FD0FB81B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaveTrackerData", "..\LeaveTrackerData\LeaveTrackerData.csproj", "{9EF0C9A6-E49A-4324-A7FD-ACB0FE5C4C14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaveTrackerBusinessLogic", "..\LeaveTrackerBusinessLogic\LeaveTrackerBusinessLogic.csproj", "{CAA20B35-E10C-46E8-9C3D-080CAAEF0145}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +19,19 @@ Global
 		{C4288669-FB9E-4111-BB96-ABD3FD0FB81B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4288669-FB9E-4111-BB96-ABD3FD0FB81B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4288669-FB9E-4111-BB96-ABD3FD0FB81B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EF0C9A6-E49A-4324-A7FD-ACB0FE5C4C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EF0C9A6-E49A-4324-A7FD-ACB0FE5C4C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EF0C9A6-E49A-4324-A7FD-ACB0FE5C4C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EF0C9A6-E49A-4324-A7FD-ACB0FE5C4C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAA20B35-E10C-46E8-9C3D-080CAAEF0145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA20B35-E10C-46E8-9C3D-080CAAEF0145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA20B35-E10C-46E8-9C3D-080CAAEF0145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA20B35-E10C-46E8-9C3D-080CAAEF0145}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4EB00FD-8537-4C42-B845-B9BC8EBEB289}
 	EndGlobalSection
 EndGlobal

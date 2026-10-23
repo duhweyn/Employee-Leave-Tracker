@@ -1,44 +1,44 @@
-﻿namespace EMPLOYEE_LEAVE_TRACKER
+﻿using LeaveTrackerBusinessLogic;
+using LeaveTrackerData;
+namespace EMPLOYEE_LEAVE_TRACKER
 {
     internal class Program
     {
+        static int currentUser = -1;
+        static string currentName = "";
         static int balance = 15;
-        static int request;
         static void Main(string[] args)
         {
-            Console.Write("Enter name: ");
-            string name = Console.ReadLine();
-
-            if (name == "Dwayne")
+            EmployeeData data = new EmployeeData();
+            bool running = true;
+            bool login = Login();
+            if (login == false) 
             {
-                bool running = true;
-                while (running)
+                running = false;
+            }
+            while (running)
+            {
+                Console.WriteLine("" +
+                    $"\n-- Welcome to Employee Leave Tracker {currentName} --\n" +
+                    "1. Request Leave\n" +
+                    "2. Check Balance\n" +
+                    "3. Exit");
+                int input = ReadInput("Enter a number: ", 1, 3);
+                switch (input)
                 {
-                    Console.WriteLine("" +
-                        $"\n-- Welcome to Employee Leave Tracker, {name} --\n" +
-                        "1. Request Leave\n" +
-                        "2. Check Balance\n" +
-                        "3. Exit");
-                    int input = ReadInput("Enter a number: ", 1, 3);
-                    switch (input)
-                    {
-                        case 1:
-                            RequestLeave();
-                            break;
-                        case 2:
-                            Console.WriteLine($"Remaining balance: {balance}");
-                            break;
-                        case 3:
-                            Console.WriteLine("\nThank you for using ELT\n");
-                            running = false;
-                            break;
-                    }
+                    case 1:
+                        RequestLeave();
+                        break;
+                    case 2:
+                        Console.WriteLine($"Remaining balance: {balance}");
+                        break;
+                    case 3:
+                        Console.WriteLine("\nThank you for using ELT\n");
+                        running = false;
+                        break;
                 }
             }
-            else
-            {
-                Console.WriteLine("Name invalid.");
-            }
+            
         }
         static int ReadInput(string prompt, int min, int max)
         {
@@ -71,6 +71,26 @@
             balance -= request;
             Console.WriteLine($"Approved. Remaining Balance: {balance}");
             return request;
+        }
+        static bool Login()
+        {
+            AuthLogic auth = new AuthLogic();
+            for (int attempts = 1; attempts <= 3; attempts++)
+            {
+                Console.Write("Username: ");
+                string user = Console.ReadLine();
+                Console.Write("Password: ");
+                string pass = Console.ReadLine();
+                int index = auth.Login(user, pass);
+                if (index != -1)
+                {
+                    currentUser = index;
+                    currentName = user;
+                    return true;
+                }
+                Console.WriteLine($"Wrong username or password. Attempts left: {3 - attempts}");
+            }
+            return false;
         }
     }
 }
