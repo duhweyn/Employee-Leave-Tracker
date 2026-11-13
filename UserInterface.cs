@@ -2,7 +2,7 @@
 using LeaveTrackerData;
 namespace EMPLOYEE_LEAVE_TRACKER
 {
-    internal class Program
+    internal class UserInterface
     {
         static int currentUser = -1;
         static string currentName = "";

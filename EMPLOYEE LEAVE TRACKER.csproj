@@ -6,7 +6,15 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
+
+	<!-- stops the console project from compiling the library folders -->
 	<ItemGroup>
-		<ProjectReference Include="..\LeaveTrackerBusinessLogic\LeaveTrackerBusinessLogic.csproj" />
+		<Compile Remove="LeaveTrackerBusinessLogic\**" />
+		<Compile Remove="LeaveTrackerData\**" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include="LeaveTrackerBusinessLogic\LeaveTrackerBusinessLogic.csproj" />
+		<ProjectReference Include="LeaveTrackerBusinessLogic\LeaveTrackerBusinessLogic.csproj" />
 	</ItemGroup>
 </Project>
