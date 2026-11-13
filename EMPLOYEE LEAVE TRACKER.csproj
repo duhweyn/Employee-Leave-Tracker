@@ -7,10 +7,10 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
-	<!-- stops the console project from compiling the library folders -->
 	<ItemGroup>
 		<Compile Remove="LeaveTrackerBusinessLogic\**" />
 		<Compile Remove="LeaveTrackerData\**" />
+		<Compile Remove="LeaveTrackerUI\**" />
 	</ItemGroup>
 	
 	<ItemGroup>
